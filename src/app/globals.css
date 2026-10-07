@@ -1,0 +1,7 @@
+html, body { margin: 0; height: 100%; font-family: system-ui, sans-serif; background: #111; color: #eee; }
+.join { max-width: 360px; margin: 15vh auto; display: flex; flex-direction: column; gap: 12px; padding: 0 16px; }
+.join input, .join button { padding: 10px; font-size: 16px; border-radius: 6px; border: 1px solid #444; }
+.join input { background: #1c1c1c; color: inherit; }
+.join button { background: #2f6fed; color: #fff; border: 0; cursor: pointer; }
+.join button:disabled { opacity: .6; }
+.error { color: #ff6b6b; }
