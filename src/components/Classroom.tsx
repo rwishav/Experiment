@@ -1,6 +1,7 @@
 'use client';
 
 import { LiveKitRoom, RoomAudioRenderer, VideoConference } from '@livekit/components-react';
+import { BackgroundControl } from './BackgroundControl';
 
 export function Classroom({
   token,
@@ -24,6 +25,7 @@ export function Classroom({
       onError={(err) => onLeave(`Could not join: ${err.message}`)}
     >
       <VideoConference />
+      <BackgroundControl />
       <RoomAudioRenderer />
     </LiveKitRoom>
   );
