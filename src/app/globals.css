@@ -5,3 +5,15 @@ html, body { margin: 0; height: 100%; font-family: system-ui, sans-serif; backgr
 .join button { background: #2f6fed; color: #fff; border: 0; cursor: pointer; }
 .join button:disabled { opacity: .6; }
 .error { color: #ff6b6b; }
+.join input, .join select, .join button { padding: 10px; font-size: 16px; border-radius: 6px; border: 1px solid #444; }
+.join select { background: #1c1c1c; color: inherit; }
+.mentor-layout { display: flex; flex-direction: column; height: 100%; }
+.mentor-body { flex: 1; min-height: 0; display: flex; gap: 8px; padding: 8px; }
+.mentor-main { flex: 1; min-width: 0; display: flex; }
+.mentor-main > * { flex: 1; min-width: 0; }
+.mentor-side { width: 220px; flex: none; overflow-y: auto; }
+.mentor-side .lk-participant-tile { cursor: pointer; }
+.mentor-side .lk-participant-tile[data-spotlit="true"] { outline: 2px solid #2f6fed; }
+.role-badge { position: absolute; top: 6px; left: 6px; z-index: 2; font-size: 11px; padding: 2px 6px; border-radius: 4px; background: #2f6fed; color: #fff; }
+@media (max-width: 700px) { .mentor-body { flex-direction: column; } .mentor-side { width: auto; height: 120px; } }
+.role-badge.role-mentee { background: #555; }

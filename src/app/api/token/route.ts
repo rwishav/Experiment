@@ -13,6 +13,10 @@ export async function POST(req: Request) {
   const body = await req.json().catch(() => ({}));
   const room = typeof body.room === 'string' ? body.room.trim() : '';
   const name = typeof body.name === 'string' ? body.name.trim() : '';
+  const role = body.role;
+  if (role !== 'mentor' && role !== 'mentee') {
+    return NextResponse.json({ error: 'Role must be mentor or mentee' }, { status: 400 });
+  }
   if (!/^[a-zA-Z0-9_-]{1,64}$/.test(room)) {
     return NextResponse.json({ error: 'Classroom name must be 1-64 letters, numbers, - or _' }, { status: 400 });
   }
@@ -38,6 +42,7 @@ export async function POST(req: Request) {
   const at = new AccessToken(LIVEKIT_API_KEY, LIVEKIT_API_SECRET, {
     identity: randomUUID(),
     name,
+    attributes: { role },
     ttl: '1h',
   });
   at.addGrant({

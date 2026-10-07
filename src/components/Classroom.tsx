@@ -1,6 +1,7 @@
 'use client';
 
-import { LiveKitRoom, RoomAudioRenderer, VideoConference } from '@livekit/components-react';
+import { LiveKitRoom, RoomAudioRenderer } from '@livekit/components-react';
+import { MentorLayout } from './MentorLayout';
 import { BackgroundControl } from './BackgroundControl';
 
 export function Classroom({
@@ -24,7 +25,7 @@ export function Classroom({
       onDisconnected={() => onLeave()}
       onError={(err) => onLeave(`Could not join: ${err.message}`)}
     >
-      <VideoConference />
+      <MentorLayout />
       <BackgroundControl />
       <RoomAudioRenderer />
     </LiveKitRoom>
